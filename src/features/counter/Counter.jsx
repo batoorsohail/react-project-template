@@ -1,6 +1,8 @@
-import { useSelector, useDispatch } from "react-redux"
-import { increment, decrement, reset, incrementByAmount } from "./counterSlice"
-import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+import {
+  increment, decrement, reset, incrementByAmount,
+} from './counterSlice';
 
 const Counter = () => {
   const count = useSelector((state) => state.counter.count);
@@ -10,8 +12,8 @@ const Counter = () => {
 
   const resetAll = () => {
     setIncrementAmount(0);
-    dispatch(reset())
-  }
+    dispatch(reset());
+  };
 
   return (
     <section className="flex flex-col items-center justify-center gap-5 h-screen">
@@ -28,7 +30,7 @@ const Counter = () => {
         <button className="px-5 py-2 rounded-md border" onClick={() => dispatch(resetAll())}>Reset</button>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Counter
+export default Counter;
